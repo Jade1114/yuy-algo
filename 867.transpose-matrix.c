@@ -13,7 +13,7 @@
 int** transpose(int** matrix, int matrixSize, int* matrixColSize, int* returnSize,
                 int** returnColumnSizes) {
   int rows = matrixSize;
-  int cols = matrixColSize;
+  int cols = matrixColSize[0];
   *returnSize = cols;
   *returnColumnSizes = malloc(cols * sizeof(int));
 
@@ -35,5 +35,7 @@ int** transpose(int** matrix, int matrixSize, int* matrixColSize, int* returnSiz
       result[j][i] = matrix[i][j];
     }
   }
+
+  return result;
 }
 // @lc code=end
